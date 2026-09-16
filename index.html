@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>电信政务云第三季度应急演练</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Microsoft YaHei",sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    color:#fff;
+    background:
+    linear-gradient(135deg,rgba(0,42,90,.95),rgba(0,150,220,.75)),
+    url("https://images.unsplash.com/photo-1451187580459-43490279c0fa");
+    background-size:cover;
+    background-position:center;
+}
+
+/* 科技网格效果 */
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+    linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);
+    background-size:50px 50px;
+}
+
+.container{
+    position:relative;
+    z-index:1;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.title{
+    font-size:52px;
+    font-weight:bold;
+    letter-spacing:10px;
+    text-shadow:0 0 25px #00d9ff;
+    margin-bottom:40px;
+}
+
+.time{
+    font-size:30px;
+    margin-bottom:60px;
+    padding:15px 45px;
+    border-radius:10px;
+    background:rgba(0,30,70,.55);
+    border:1px solid rgba(255,255,255,.4);
+}
+
+.content{
+    width:720px;
+    text-align:center;
+    padding:45px;
+    background:rgba(0,35,80,.65);
+    border-radius:20px;
+    border:1px solid rgba(0,220,255,.5);
+    box-shadow:0 0 40px rgba(0,200,255,.45);
+}
+
+.content h2{
+    font-size:36px;
+    color:#7fe9ff;
+    margin-bottom:30px;
+}
+
+.content p{
+    font-size:28px;
+    line-height:2;
+}
+
+.footer{
+    position:absolute;
+    bottom:35px;
+    color:#c9efff;
+    font-size:18px;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <div class="title">
+        电信政务云第三季度应急演练
+    </div>
+
+    <div class="time">
+        当前时间：<span id="clock"></span>
+    </div>
+
+
+    <div class="content">
+        <h2>演练主题</h2>
+        <p>
+            云硬盘备份与恢复
+        </p>
+    </div>
+
+
+    <div class="footer">
+        电信政务云安全保障平台
+    </div>
+
+</div>
+
+
+<script>
+function showTime(){
+
+    const now = new Date();
+
+    const time =
+    now.getFullYear()+"-"+
+    String(now.getMonth()+1).padStart(2,"0")+"-"+
+    String(now.getDate()).padStart(2,"0")+" "+
+    String(now.getHours()).padStart(2,"0")+":"+
+    String(now.getMinutes()).padStart(2,"0")+":"+
+    String(now.getSeconds()).padStart(2,"0");
+
+    document.getElementById("clock").innerHTML=time;
+}
+
+showTime();
+setInterval(showTime,1000);
+
+</script>
+
+</body>
+</html>
