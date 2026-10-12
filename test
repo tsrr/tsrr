@@ -4,11 +4,11 @@ vrrp_instance VI_1 {
     virtual_router_id 51 #组id一致即可
     priority 90 #优先级越大越高 
     advert_int 1 # 心跳检测    
-    unicast_src_ip 172.22.79.a #本机ip 单播vrrp  默认为组播往224.0.0.18发信息
+    unicast_src_ip 172.22. #本机ip 单播vrrp  默认为组播往224.0.0.18发信息
     unicast_peer {
-    	172.22.79.b #对端ip
+    	172.22. #对端ip
     }
     virtual_ipaddress {
-	172.22.79.x #vip地址
+	172.22. #vip地址
     }
 }
